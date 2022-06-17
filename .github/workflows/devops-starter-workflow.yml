@@ -103,10 +103,10 @@ jobs:
       uses: azure/CLI@v1
       continue-on-error: false
       with:
-     azcliversion: 2.29.2
-     inlineScript: |
-       az group create --name "$" --location "$"
-       az deployment group create --resource-group "$" --template-file ./ArmTemplates/windows-webapp-     template.json --parameters webAppName="$" hostingPlanName="$"   appInsightsLocation="$" sku="$"
+       azcliversion: 2.29.2
+       inlineScript: |
+        az group create --name "$" --location "$"
+        az deployment group create --resource-group "$" --template-file ./ArmTemplates/windows-webapp-     template.json --parameters webAppName="$" hostingPlanName="$"   appInsightsLocation="$" sku="$"
 
     - name: 'Deploy web app'
       uses: azure/webapps-deploy@v2
