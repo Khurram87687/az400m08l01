@@ -105,8 +105,8 @@ jobs:
       with:
        azcliversion: 2.29.2
        inlineScript: |
-        az group create --name "$" --location "$"
-        az deployment group create --resource-group "$" --template-file ./ArmTemplates/windows-webapp-     template.json --parameters webAppName="$" hostingPlanName="$"   appInsightsLocation="$" sku="$"
+        az group create --name "${{ env.RESOURCEGROUPNAME }}" --location "${{ env.LOCATION }}"
+        az deployment group create --resource-group "${{ env.RESOURCEGROUPNAME }}" --template-file ./ArmTemplates/windows-webapp-template.
 
     - name: 'Deploy web app'
       uses: azure/webapps-deploy@v2
